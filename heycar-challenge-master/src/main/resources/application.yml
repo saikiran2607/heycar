@@ -1,0 +1,30 @@
+#  in Memory Database Settings
+
+server:
+  port: 8083
+   
+spring:
+  datasource:
+    url: jdbc:h2:mem:heycar-app
+    platform: h2
+    username: heycar
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: true
+
+  #   H2 Settings
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: true
+        web-allow-others: true
